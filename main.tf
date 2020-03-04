@@ -2,7 +2,7 @@
 
 
 module "tvnet" {
-  source   = "github.com/ancoleman/terraform-azure-tfc-demo"
+  source   = "git::ssh://github.com/ancoleman/terraform-azure-tfc-demo.git"
   location = local.region
   networks = local.networks[local.environment][local.region]
   rgs      = local.rgs[local.environment][local.region]
