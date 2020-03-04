@@ -1,7 +1,8 @@
 locals {
-
+  region = "centralus"
+  environment = "default"
   rgs = {
-    prod = {
+    default = {
       centralus = {
         regionaltrainingtest = {}
       }
@@ -9,7 +10,7 @@ locals {
   }
 
   networks = {
-    prod = {
+    default = {
       centralus = {
         trainingtvnet1 = {
           resource_group_name = "regionaltrainingtest"
@@ -43,7 +44,7 @@ locals {
 
 
   sgs = {
-    prod = {
+    default = {
       centralus = {
         mgmt = {
           resource_group_name = "regionaltrainingtest"
@@ -105,7 +106,7 @@ locals {
   }
 
   peerings = {
-    prod = {
+    default = {
       centralus = {
         peering-to-spoke1 = {
           remote_vnet_name             = "trainingsvnet1"
@@ -147,7 +148,7 @@ locals {
     }
   }
   pips = {
-    prod = {
+    default = {
       centralus = {
         public-slb-tvnet1-pip1 = {
           resource_group_name = "regionaltrainingtest"
@@ -166,7 +167,7 @@ locals {
   }
 
   lbs = {
-    prod = {
+    default = {
       centralus = {
         public-slb-tvnet1 = {
           resource_group_name = "regionaltrainingtest"
